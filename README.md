@@ -10,7 +10,7 @@ Un bucket S3 para almacenar resultados.
 
 CloudWatch para registrar logs y monitorear la ejecución.
 
-Primera etapa: Infraestructura como Código
+Infraestructura como Código:
 
 Paso 1: Comencé escribiendo la configuración en Terraform para crear un bucket S3. 
 La configuracion fue bastante sencilla, crear un bucket S3 incluyendo el versionado para que cada vez que se modifique el archivo quedara guardada la version anterior.  Sume el bloqueo de acceso publico por seguridad.  Por ultimo sume la notificacion para que S3 le avisara a lambda que se creo un archivo ".txt".

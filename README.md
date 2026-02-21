@@ -12,8 +12,8 @@ CloudWatch para registrar logs y monitorear la ejecución.
 
 Primera etapa: Infraestructura como Código
 
-Comencé escribiendo la configuración en Terraform para crear un bucket S3. 
-Paso 1: La configuracion fue bastante sencilla, crear un bucket S3 incluyendo el versionado para que cada vez que se modifique el archivo quedara guardada la version anterior.  Sume el bloqueo de acceso publico por seguridad.  Por ultimo sume la notificacion para que S3 le avisara a lambda que se creo un archivo ".txt".
+Paso 1: Comencé escribiendo la configuración en Terraform para crear un bucket S3. 
+La configuracion fue bastante sencilla, crear un bucket S3 incluyendo el versionado para que cada vez que se modifique el archivo quedara guardada la version anterior.  Sume el bloqueo de acceso publico por seguridad.  Por ultimo sume la notificacion para que S3 le avisara a lambda que se creo un archivo ".txt".
 
 Paso 2 la configuracion de Lambda: 
 Tomo el archivo de Lambda_function.py para que Lambda sepa que es lo que debe hacer. Luego creo el recurso de la funcion lambda, le agrego un "source_code_hash" para que detecte cambios en el código y en ese caso actualizarlo. Por ultimo creo un recurso dando un permiso para que S3 invoque a lambda.

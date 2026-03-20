@@ -1,4 +1,4 @@
-resource "aws_iam_role" "test_role" {
+resource "aws_iam_role" "lambda_role" {
   name = "${var.project_name}-role"
 
   assume_role_policy = jsonencode({
@@ -69,6 +69,6 @@ resource "aws_iam_policy_attachment" "lambda_attach" {
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_logs" {
-  role       = aws_iam_role.iam_for_lambda.name
+  role       = aws_iam_role.lambda_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
